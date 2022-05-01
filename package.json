@@ -2,9 +2,14 @@
   "name": "@kjn/logger",
   "version": "1.0.0",
   "description": "Simple logger",
-  "main": "src/index.ts",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
     "prepare": "husky install",
+    "prepublishOnly": "npm run build && cp -R build dist",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "lint:prettier": "prettier --check .",
@@ -13,7 +18,12 @@
     "build": "tsc --pretty",
     "semantic-release": "semantic-release"
   },
-  "author": "Kishan Nirghin",
+  "author": "Kishan Nirghin <kishan@itslogical.nl>",
+  "keywords": [
+    "Logging",
+    "Development",
+    "Debugging"
+  ],
   "license": "ISC",
   "devDependencies": {
     "@commitlint/cli": "^16.2.3",

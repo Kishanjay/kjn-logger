@@ -9,6 +9,10 @@ export default class Logger {
     console.log(`[${this.name}] ${params.join(" ")}`);
   };
 
+  debug = (...params: string[]) => {
+    console.debug(`[${this.name}] ${params.join(" ")}`);
+  };
+
   info = (...params: string[]) => {
     console.info(`[${this.name}] ${params.join(" ")}`);
   };
